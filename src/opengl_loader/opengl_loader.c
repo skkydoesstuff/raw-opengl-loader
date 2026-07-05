@@ -1,4 +1,4 @@
-#include "opengl_loader.h"
+#include "opengl_loader/opengl_loader.h"
 #include "error.h"
 
 GLFunctions gl = {0};
@@ -86,47 +86,30 @@ void* get_gl_proc(const char* name) {
     return proc;
 }
 
+#define LOAD_GL(name) \
+  gl.name = (name##Proc)get_gl_proc(#name);
+
 void create_capabilities() {
-  gl.glViewport = (PFNGLVIEWPORTPROC)
-    get_gl_proc("glViewport");
+  // general opengl functions
+  LOAD_GL(glViewport);
+  LOAD_GL(glClearColor);
+  LOAD_GL(glClear);
 
-  gl.glClearColor = (PFNGLCLEARCOLORPROC)
-    get_gl_proc("glClearColor");
-
-  gl.glClear = (PFNGLCLEARPROC)
-    get_gl_proc("glClear");
-
-  gl.glGenVertexArrays = (PFNGLGENVERTEXARRAYSPROC)
-    get_gl_proc("glGenVertexArrays");
-
-  gl.glBindVertexArray = (PFNGLBINDVERTEXARRAYPROC)
-    get_gl_proc("glBindVertexArray");
-
-  gl.glDeleteVertexArrays = (PFNGLDELETEVERTEXARRAYSPROC)
-    get_gl_proc("glDeleteVertexArrays");
-
-  gl.glVertexAttribPointer = (PFNGLVERTEXATTRIBPOINTERPROC)
-    get_gl_proc("glVertexAttribPointer");
-
-  gl.glEnableVertexAttribArray = (PFNGLENABLEVERTEXATTRIBARRAYPROC)
-    get_gl_proc("glEnableVertexAttribArray");
-
-  gl.glGenBuffers = (PFNGLGENBUFFERSPROC)
-    get_gl_proc("glGenBuffers");
-
-  gl.glBindBuffer = (PFNGLBINDBUFFERPROC)
-    get_gl_proc("glBindBuffer");
+  // vertex array functions
+  LOAD_GL(glGenVertexArrays);
+  LOAD_GL(glBindVertexArray);
+  LOAD_GL(glDeleteVertexArrays);
+  LOAD_GL(glVertexAttribPointer);
+  LOAD_GL(glEnableVertexAttribArray);
   
-  gl.glBufferData = (PFNGLBUFFERDATAPROC)
-    get_gl_proc("glBufferData");
-
-  gl.glDeleteBuffers = (PFNGLDELETEBUFFERSPROC)
-    get_gl_proc("glDeleteBuffers");
-
-  gl.glDrawArrays = (PFNGLDRAWARRAYSPROC)
-    get_gl_proc("glDrawArrays");
-
-  gl.glDrawElements = (PFNGLDRAWELEMENTSPROC)
-    get_gl_proc("glDrawElements");
+  // buffer functions
+  LOAD_GL(glGenBuffers);
+  LOAD_GL(glBindBuffer);
+  LOAD_GL(glBufferData);
+  LOAD_GL(glDeleteBuffers);
+  
+  // draw functions
+  LOAD_GL(glDrawArrays);
+  LOAD_GL(glDrawElements);
 }
 

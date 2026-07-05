@@ -1,4 +1,5 @@
 #include "window.h"
+#include <winuser.h>
 
 static const char CLASS_NAME[] = "raw_renderer";
 
@@ -38,7 +39,7 @@ int window_create(
         0,
         CLASS_NAME,
         title,
-        WS_OVERLAPPEDWINDOW,
+        WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX,
         CW_USEDEFAULT,
         CW_USEDEFAULT,
         width,

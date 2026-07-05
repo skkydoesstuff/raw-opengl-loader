@@ -1,0 +1,20 @@
+[
+{
+  "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\main.c.obj -c E:\\projects\\c\\raw_renderer\\src\\main.c",
+  "file": "E:/projects/c/raw_renderer/src/main.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/main.c.obj"
+},
+{
+  "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\opengl_loader\\opengl_loader.c",
+  "file": "E:/projects/c/raw_renderer/src/opengl_loader/opengl_loader.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/opengl_loader/opengl_loader.c.obj"
+},
+{
+  "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\window.c",
+  "file": "E:/projects/c/raw_renderer/src/window.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/window.c.obj"
+}
+]
