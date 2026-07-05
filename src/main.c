@@ -21,7 +21,7 @@ int WINAPI WinMain(
     return 1;
 
   MSG msg;
-
+  
   HGLRC context;
   create_context(&context, window.hdc);
   create_capabilities();
@@ -39,6 +39,40 @@ int WINAPI WinMain(
     0, 1, 2,
     0, 3, 2
   };
+
+  const GLchar *vSrc =
+  "#version 460 core\n"
+  "layout (location = 0) in vec3 aPos;\n"
+  "out vec4 vertexColor;\n"
+  "void main() {\n"
+  "  gl_Position = vec4(aPos, 1.0);\n"
+  "  vertexColor = vec4(0.5, 0.0, 0.0, 1.0);\n"
+  "}\n";
+
+  const GLchar *fSrc =
+  "#version 460 core\n"
+  "in vec4 vertexColor;\n"
+  "out vec4 FragColor;\n"
+  "void main() {\n"
+  "  FragColor = vertexColor;\n"
+  "}\n";
+
+  unsigned int v = gl.glCreateShader(GL_VERTEX_SHADER);
+  gl.glShaderSource(v, 1, &vSrc, NULL);
+  gl.glCompileShader(v);
+
+  unsigned int f = gl.glCreateShader(GL_FRAGMENT_SHADER);
+  gl.glShaderSource(f, 1, &fSrc, NULL);
+  gl.glCompileShader(f);
+
+  unsigned int p = gl.glCreateProgram();
+  gl.glAttachShader(p, v);
+  gl.glAttachShader(p, f);
+  gl.glLinkProgram(p);
+  gl.glDetachShader(p, v);
+  gl.glDetachShader(p, f);
+  gl.glDeleteShader(v);
+  gl.glDeleteShader(f);
 
   unsigned int VAO;
   gl.glGenVertexArrays(1, &VAO);
@@ -69,11 +103,16 @@ int WINAPI WinMain(
     }
 
     gl.glClear(GL_COLOR_BUFFER_BIT);
+    gl.glUseProgram(p);
     gl.glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 
     SwapBuffers(window.hdc);
   }
 
+  gl.glDeleteProgram(p);
+
+  gl.glDeleteBuffers(1, &VBO);
+  gl.glDeleteBuffers(1, &EBO);
   gl.glDeleteVertexArrays(1, &VAO);
 
   destroy_context(&context);

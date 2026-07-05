@@ -20,3 +20,7 @@
 // types
 #define GL_FLOAT 0x1406
 #define GL_UNSIGNED_INT 0x1405
+
+// shader types
+#define GL_FRAGMENT_SHADER 0x8B30
+#define GL_VERTEX_SHADER 0x8B31

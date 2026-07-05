@@ -111,5 +111,17 @@ void create_capabilities() {
   // draw functions
   LOAD_GL(glDrawArrays);
   LOAD_GL(glDrawElements);
+
+  // shader functions
+  LOAD_GL(glCreateShader);
+  LOAD_GL(glDeleteShader);
+  LOAD_GL(glShaderSource);
+  LOAD_GL(glCompileShader);
+  LOAD_GL(glCreateProgram);
+  LOAD_GL(glDeleteProgram);
+  LOAD_GL(glAttachShader);
+  LOAD_GL(glDetachShader);
+  LOAD_GL(glLinkProgram);
+  LOAD_GL(glUseProgram);
 }
 

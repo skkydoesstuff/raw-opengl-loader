@@ -1,5 +1,6 @@
 #pragma once
 
+typedef char GLchar;
 typedef unsigned int GLenum;
 typedef int GLint;
 typedef unsigned int GLuint;
