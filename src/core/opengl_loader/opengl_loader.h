@@ -2,16 +2,14 @@
 
 #include <windows.h>
 
-#include "opengl_loader/opengl_types.h"
-#include "opengl_loader/opengl_enums.h"
+#include "core/opengl_loader/opengl_types.h"
+#include "core/opengl_loader/opengl_enums.h"
 
 #define WGL_CONTEXT_MAJOR_VERSION_ARB 0x2091
 #define WGL_CONTEXT_MINOR_VERSION_ARB 0x2092
 #define WGL_CONTEXT_PROFILE_MASK_ARB  0x9126
 
 #define WGL_CONTEXT_CORE_PROFILE_BIT_ARB 0x00000001
-
-typedef ptrdiff_t GLsizeiptr;
 
 typedef HGLRC (WINAPI *PFNWGLCREATECONTEXTATTRIBSARBPROC)(
     HDC,

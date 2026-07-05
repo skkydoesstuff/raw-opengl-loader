@@ -1,4 +1,4 @@
-#include "opengl_loader/opengl_loader.h"
+#include "core/opengl_loader/opengl_loader.h"
 #include "error.h"
 
 GLFunctions gl = {0};

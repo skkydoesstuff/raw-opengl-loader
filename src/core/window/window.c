@@ -1,5 +1,4 @@
 #include "window.h"
-#include <winuser.h>
 
 static const char CLASS_NAME[] = "raw_renderer";
 
@@ -57,6 +56,22 @@ int window_create(
     ShowWindow(window->hwnd, SW_SHOW);
 
     return 1;
+}
+
+void window_handle_messages() {
+  MSG msg;
+
+  while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
+    if (msg.message == WM_QUIT)
+      exit(0);
+
+    TranslateMessage(&msg);
+    DispatchMessage(&msg);
+  }
+}
+
+void window_swap_buffers(Window *window) {
+  SwapBuffers(window->hdc);
 }
 
 void window_destroy(Window *window)

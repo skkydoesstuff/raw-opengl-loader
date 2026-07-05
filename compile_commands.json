@@ -1,20 +1,38 @@
 [
 {
   "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\file_utils\\file_utils.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\file_utils\\file_utils.c",
+  "file": "E:/projects/c/raw_renderer/src/core/file_utils/file_utils.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/file_utils/file_utils.c.obj"
+},
+{
+  "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\opengl_loader\\opengl_loader.c",
+  "file": "E:/projects/c/raw_renderer/src/core/opengl_loader/opengl_loader.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/opengl_loader/opengl_loader.c.obj"
+},
+{
+  "directory": "E:/projects/c/raw_renderer/build",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\window\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\window\\window.c",
+  "file": "E:/projects/c/raw_renderer/src/core/window/window.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/window/window.c.obj"
+},
+{
+  "directory": "E:/projects/c/raw_renderer/build",
   "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\main.c.obj -c E:\\projects\\c\\raw_renderer\\src\\main.c",
   "file": "E:/projects/c/raw_renderer/src/main.c",
   "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/main.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\opengl_loader\\opengl_loader.c",
-  "file": "E:/projects/c/raw_renderer/src/opengl_loader/opengl_loader.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/opengl_loader/opengl_loader.c.obj"
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\mesh.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\mesh.c",
+  "file": "E:/projects/c/raw_renderer/src/renderer/mesh.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/renderer/mesh.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\window.c",
-  "file": "E:/projects/c/raw_renderer/src/window.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/window.c.obj"
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\shader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\shader.c",
+  "file": "E:/projects/c/raw_renderer/src/renderer/shader.c",
+  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/renderer/shader.c.obj"
 }
 ]
