@@ -1,6 +1,11 @@
 #include "core/opengl_loader/opengl_types.h"
 
 typedef struct {
+  const char* name;
+  GLuint uniform;
+} Uniform;
+
+typedef struct {
   GLuint program;
 } Shader;
 

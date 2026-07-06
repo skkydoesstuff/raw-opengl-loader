@@ -1,5 +1,6 @@
 #include <windows.h>
 
+#include "core/opengl_loader/opengl_enums.h"
 #include "core/opengl_loader/opengl_loader.h"
 #include "core/window/window.h"
 
@@ -28,6 +29,7 @@ int WINAPI WinMain(
   create_context(&context, window.hdc);
   create_capabilities();
   
+  gl.glEnable(GL_DEPTH_TEST);
   gl.glViewport(0, 0, 1280, 720);
 
   Shader shader = {0};
@@ -58,7 +60,7 @@ int WINAPI WinMain(
   while (1) {
     window_handle_messages();
 
-    gl.glClear(GL_COLOR_BUFFER_BIT);
+    gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     gl.glUseProgram(shader.program);
     mesh_draw(&mesh);
 

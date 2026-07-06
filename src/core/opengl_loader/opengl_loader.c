@@ -90,38 +90,11 @@ void* get_gl_proc(const char* name) {
   gl.name = (name##Proc)get_gl_proc(#name);
 
 void create_capabilities() {
-  // general opengl functions
-  LOAD_GL(glViewport);
-  LOAD_GL(glClearColor);
-  LOAD_GL(glClear);
+  #define GL_FUNCTION(name) \
+    gl.name = (name##Proc)get_gl_proc(#name);
 
-  // vertex array functions
-  LOAD_GL(glGenVertexArrays);
-  LOAD_GL(glBindVertexArray);
-  LOAD_GL(glDeleteVertexArrays);
-  LOAD_GL(glVertexAttribPointer);
-  LOAD_GL(glEnableVertexAttribArray);
-  
-  // buffer functions
-  LOAD_GL(glGenBuffers);
-  LOAD_GL(glBindBuffer);
-  LOAD_GL(glBufferData);
-  LOAD_GL(glDeleteBuffers);
-  
-  // draw functions
-  LOAD_GL(glDrawArrays);
-  LOAD_GL(glDrawElements);
+  #include "core/opengl_loader/opengl_functions.inc"
 
-  // shader functions
-  LOAD_GL(glCreateShader);
-  LOAD_GL(glDeleteShader);
-  LOAD_GL(glShaderSource);
-  LOAD_GL(glCompileShader);
-  LOAD_GL(glCreateProgram);
-  LOAD_GL(glDeleteProgram);
-  LOAD_GL(glAttachShader);
-  LOAD_GL(glDetachShader);
-  LOAD_GL(glLinkProgram);
-  LOAD_GL(glUseProgram);
+  #undef GL_FUNCTION
 }
 

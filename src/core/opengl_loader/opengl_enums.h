@@ -4,8 +4,11 @@
 #define GL_FALSE 0
 #define GL_TRUE 1
 
+#define GL_DEPTH_TEST 0x0B71
+
 // clear buffer bits
 #define GL_COLOR_BUFFER_BIT 0x00004000
+#define GL_DEPTH_BUFFER_BIT 0x00000100
 
 // buffer types
 #define GL_ARRAY_BUFFER 0x8892
