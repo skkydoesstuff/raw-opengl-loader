@@ -1,7 +1,6 @@
 #include "core/file_utils/file_utils.h"
 
 #include <windows.h>
-#include <stdio.h>
 
 #include "error.h"
 
@@ -26,39 +25,42 @@ char* get_executable_path() {
 }
 
 char* read_file(const char* path) {
-  FILE* file = fopen(path, "rb");
-  if (!file) {
-    LOG("Failed to open file");
+  HANDLE file = CreateFileA(
+    path,
+    GENERIC_READ,
+    FILE_SHARE_READ,
+    NULL,
+    OPEN_EXISTING,
+    FILE_ATTRIBUTE_NORMAL,
+    NULL
+  );
+
+  if (file == INVALID_HANDLE_VALUE) {
     return NULL;
   }
 
-  fseek(file, 0, SEEK_END);
-  long file_size = ftell(file);
-  rewind(file);
-
-  if (file_size <= 0) {
-    LOG("Invalid file size");
-    fclose(file);
+  LARGE_INTEGER size;
+  if (!GetFileSizeEx(file, &size) || size.QuadPart <= 0) {
+    CloseHandle(file);
     return NULL;
   }
 
-  char* buffer = (char*)malloc(file_size + 1);
+  char* buffer = malloc((size_t)size.QuadPart + 1);
   if (!buffer) {
-    LOG("Failed to allocate memory for buffer!");
-    fclose(file);
+    CloseHandle(file);
     return NULL;
   }
 
-  size_t bytes_read = fread(buffer, 1, file_size, file);
-  if (bytes_read != file_size) {
-    LOG("Error reading file");
+  DWORD bytes_read;
+  if (!ReadFile(file, buffer, (DWORD)size.QuadPart, &bytes_read, NULL) ||
+    bytes_read != (DWORD)size.QuadPart) {
     free(buffer);
-    fclose(file);
+    CloseHandle(file);
     return NULL;
   }
 
-  buffer[file_size] = '\0';
-  fclose(file);
+  buffer[size.QuadPart] = '\0';
 
+  CloseHandle(file);
   return buffer;
 }
