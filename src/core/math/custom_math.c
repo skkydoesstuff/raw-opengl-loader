@@ -1,5 +1,4 @@
 #include "custom_math.h"
-#include <stdint.h>
 
 float my_sqrtf(float x) {
   if (x < 0.0f) {
@@ -83,28 +82,17 @@ static float wrap_pi(float x) {
 
 float my_sinf(float x) {
   x = wrap_pi(x);
-
-  int sign = 1;
-
   if (x > HALF_PI) {
     x = PI - x;
-  }
-  else if (x < -HALF_PI) {
+  } else if (x < -HALF_PI) {
     x = -PI - x;
-    sign = -1;
   }
-
   float x2 = x * x;
-
-  float result =
-    x *
-    (1.0f
-    - x2 * (1.0f / 6.0f)
-    + x2 * x2 * (1.0f / 120.0f)
-    - x2 * x2 * x2 * (1.0f / 5040.0f)
-    + x2 * x2 * x2 * x2 * (1.0f / 362880.0f));
-
-  return sign * result;
+  return x * (1.0f
+      - x2 * (1.0f / 6.0f)
+      + x2 * x2 * (1.0f / 120.0f)
+      - x2 * x2 * x2 * (1.0f / 5040.0f)
+      + x2 * x2 * x2 * x2 * (1.0f / 362880.0f));
 }
 
 float my_cosf(float x) {
