@@ -1,6 +1,5 @@
 #include "core/math/matrices.h"
-
-#include <math.h>
+#include "core/math/custom_math.h"
 
 #define MAT4(col, row) ((col) * 4 + (row))
 
@@ -56,8 +55,8 @@ Mat4 mat4_scale_create(Vec3 scale) {
 Mat4 mat4_rotate_x_create(float radians) {
   Mat4 res = MAT4_IDENTITY;
 
-  float c = cosf(radians);
-  float s = sinf(radians);
+  float c = my_cosf(radians);
+  float s = my_sinf(radians);
 
   res.m[MAT4(1, 1)] =  c;
   res.m[MAT4(1, 2)] =  s;
@@ -70,8 +69,8 @@ Mat4 mat4_rotate_x_create(float radians) {
 Mat4 mat4_rotate_y_create(float radians) {
   Mat4 res = MAT4_IDENTITY;
 
-  float c = cosf(radians);
-  float s = sinf(radians);
+  float c = my_cosf(radians);
+  float s = my_sinf(radians);
 
   res.m[MAT4(0, 0)] =  c;
   res.m[MAT4(0, 2)] = -s;
@@ -84,8 +83,8 @@ Mat4 mat4_rotate_y_create(float radians) {
 Mat4 mat4_rotate_z_create(float radians) {
   Mat4 res = MAT4_IDENTITY;
 
-  float c = cosf(radians);
-  float s = sinf(radians);
+  float c = my_cosf(radians);
+  float s = my_sinf(radians);
 
   res.m[MAT4(0, 0)] =  c;
   res.m[MAT4(0, 1)] =  s;
@@ -98,7 +97,7 @@ Mat4 mat4_rotate_z_create(float radians) {
 void mat4_perspective(float fovy, float aspect, float near, float far, Mat4* dest) {
   *dest = MAT4_IDENTITY;
 
-  float f = 1.0f / tanf(fovy * 0.5f);
+  float f = 1.0f / my_tanf(fovy * 0.5f);
   float nf = 1.0f / (near - far);
 
   dest->m[MAT4(0, 0)] = f / aspect;
