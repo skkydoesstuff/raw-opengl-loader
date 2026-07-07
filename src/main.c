@@ -7,6 +7,8 @@
 #include "renderer/mesh.h"
 #include "renderer/shader.h"
 
+#include "core/math/matrices.h"
+
 #include <windows.h>
 
 int WINAPI WinMain(
@@ -57,11 +59,29 @@ int WINAPI WinMain(
 
   gl.glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
+  Mat4 model, view, projection;
+
+  model = mat4_identity();
+  mat4_translate((Vec3){0.0f, 0.0f, 0.0f}, &model);
+  mat4_rotate((Vec3){0.0f, 0.0f, 0.0f}, &model);
+  mat4_scale((Vec3){1.0f, 1.0f, 1.0f}, &model);
+
+  mat4_look_at((Vec3){0.0f, 0.0f, 3.0f}, (Vec3){0.0f, 0.0f, 0.0f}, (Vec3){0.0f, 1.0f, 0.0f}, &view);
+
+  mat4_perspective(45.0f, (float)1920/(float)1080, 0.01f, 100.0f, &projection);
+
+  GLint model_loc = gl.glGetUniformLocation(shader.program, "model");
+  GLint view_loc = gl.glGetUniformLocation(shader.program, "view");
+  GLint projection_loc = gl.glGetUniformLocation(shader.program, "projection");
+
   while (1) {
     window_handle_messages();
 
     gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     gl.glUseProgram(shader.program);
+    gl.glUniformMatrix4fv(model_loc, 1, GL_FALSE, model.m);
+    gl.glUniformMatrix4fv(view_loc, 1, GL_FALSE, view.m);
+    gl.glUniformMatrix4fv(projection_loc, 1, GL_FALSE, projection.m);
     mesh_draw(&mesh);
 
     window_swap_buffers(&window);

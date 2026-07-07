@@ -28,3 +28,6 @@ GL_FUNCTION(glAttachShader);
 GL_FUNCTION(glDetachShader);
 GL_FUNCTION(glLinkProgram);
 GL_FUNCTION(glUseProgram);
+
+GL_FUNCTION(glGetUniformLocation);
+GL_FUNCTION(glUniformMatrix4fv);

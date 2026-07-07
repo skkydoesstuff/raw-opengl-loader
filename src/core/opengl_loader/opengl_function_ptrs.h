@@ -39,3 +39,8 @@ typedef void (APIENTRY*glAttachShaderProc)(GLuint program, GLuint shader);
 typedef void (APIENTRY*glDetachShaderProc)(GLuint program, GLuint shader);
 typedef void (APIENTRY*glLinkProgramProc)(GLuint program);
 typedef void (APIENTRY*glUseProgramProc)(GLuint program);
+
+// uniform functions
+typedef GLint (APIENTRY*glGetUniformLocationProc)(GLuint program, const GLchar* name);
+
+typedef void (APIENTRY*glUniformMatrix4fvProc)(GLint location, GLsizei count, GLboolean transpose, const GLfloat* val);
