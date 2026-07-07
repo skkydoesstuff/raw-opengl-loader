@@ -14,7 +14,7 @@ typedef struct {
 void mesh_create(
   Mesh* mesh,
   GLfloat* vertices,
-  GLint total_vertex_count,
+  GLint floats_per_vertex,
   GLsizeiptr size_of_vertices,
   GLuint* indices,
   GLint total_index_count,

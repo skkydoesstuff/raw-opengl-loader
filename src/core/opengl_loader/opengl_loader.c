@@ -3,7 +3,7 @@
 
 GLFunctions gl = {0};
 
-void create_context(HGLRC* context, HDC hdc) {
+void context_create(HGLRC* context, HDC hdc) {
   PIXELFORMATDESCRIPTOR pfd = {
     sizeof(PIXELFORMATDESCRIPTOR), 
     1, 
@@ -73,7 +73,7 @@ void create_context(HGLRC* context, HDC hdc) {
   *context = new_context;
 }
 
-void destroy_context(HGLRC* context) {
+void context_destroy(HGLRC* context) {
   wglMakeCurrent(NULL, NULL);
   wglDeleteContext(*context);
 }

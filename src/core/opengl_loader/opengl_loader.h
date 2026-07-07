@@ -22,8 +22,8 @@ typedef struct {
   HGLRC hglrc;
 } Context;
 
-void create_context(HGLRC* context, HDC hdc);
-void destroy_context(HGLRC* context);
+void context_create(HGLRC* context, HDC hdc);
+void context_destroy(HGLRC* context);
 void create_capabilities();
 
 typedef struct GLFunctions {

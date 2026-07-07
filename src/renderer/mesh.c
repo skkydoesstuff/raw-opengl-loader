@@ -2,16 +2,18 @@
 
 #include "renderer/mesh.h"
 
+#include <stdio.h>
+
 void mesh_create(
   Mesh* mesh,
   GLfloat* vertices,
-  GLint total_vertex_count,
+  GLint floats_per_vertex,
   GLsizeiptr size_of_vertices,
   GLuint* indices,
   GLint total_index_count,
   GLsizeiptr size_of_indices
 ) {
-  mesh->stride = total_vertex_count * sizeof(GLfloat);
+  mesh->stride = floats_per_vertex * sizeof(GLfloat);
   mesh->index_count = total_index_count;
 
   gl.glGenVertexArrays(1, &mesh->VAO);
@@ -36,6 +38,8 @@ void mesh_add_vertex_attribute(
   GLint size,
   const void* ptr
 ) {
+  printf("stride: %d\n", mesh->stride);
+
   mesh_bind(mesh);
   gl.glVertexAttribPointer(index, size, GL_FLOAT, GL_FALSE, mesh->stride, ptr);
   gl.glEnableVertexAttribArray(index);

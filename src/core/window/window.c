@@ -1,4 +1,5 @@
 #include "window.h"
+#include <minwindef.h>
 
 static const char CLASS_NAME[] = "raw_renderer";
 
@@ -19,12 +20,13 @@ static LRESULT CALLBACK wnd_proc(
 
 int window_create(
     Window *window,
-    HINSTANCE instance,
     const char *title,
     int width,
     int height)
 {
-    WNDCLASSEX wc = {
+  HINSTANCE instance = GetModuleHandle(NULL);
+
+  WNDCLASSEX wc = {
         .cbSize = sizeof(wc),
         .lpfnWndProc = wnd_proc,
         .hInstance = instance,

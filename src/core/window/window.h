@@ -7,7 +7,7 @@ typedef struct {
   HDC hdc;
 } Window;
 
-int window_create(Window* window, HINSTANCE hInstance, const char* title, int width, int height);
+int window_create(Window* window, const char* title, int width, int height);
 
 void window_handle_messages();
 
