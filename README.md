@@ -22,7 +22,7 @@ Raw Renderer is a minimalist OpenGL rendering framework designed for Windows pla
 ## Building
 
 ```bash
-
+run the build.bat file
 build
 
 ```
