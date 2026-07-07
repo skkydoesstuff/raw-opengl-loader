@@ -38,29 +38,39 @@ void create_context(HGLRC* context, HDC hdc) {
     (PFNWGLCREATECONTEXTATTRIBSARBPROC)
       wglGetProcAddress("wglCreateContextAttribsARB");
 
-  if (!wglCreateContextAttribsARB) {
-    LOG("Extension not supported");
+  HGLRC new_context = 0;
+
+  if (wglCreateContextAttribsARB) {
+    const int attribs[] = {
+      WGL_CONTEXT_MAJOR_VERSION_ARB, 4,
+      WGL_CONTEXT_MINOR_VERSION_ARB, 6,
+      WGL_CONTEXT_PROFILE_MASK_ARB,
+          WGL_CONTEXT_CORE_PROFILE_BIT_ARB,
+      0
+    };
+
+    new_context = wglCreateContextAttribsARB(hdc, 0, attribs);
+  } else {
+    LOG("wglCreateContextAttribsARB not supported, falling back to a legacy context");
   }
 
-  const int attribs[] = {
-    WGL_CONTEXT_MAJOR_VERSION_ARB, 4,
-    WGL_CONTEXT_MINOR_VERSION_ARB, 6,
-    WGL_CONTEXT_PROFILE_MASK_ARB,
-        WGL_CONTEXT_CORE_PROFILE_BIT_ARB,
-    0
-  };
+  if (!new_context) {
+    new_context = wglCreateContext(hdc);
+  }
 
-  *context =
-    wglCreateContextAttribsARB(hdc, 0, attribs);
-
-  if (!*context) {
-    LOG("Couldn't create OpenGL 4.6");
+  if (!new_context) {
+    LOG("Couldn't create an OpenGL context");
+    return;
   }
 
   wglMakeCurrent(NULL, NULL);
   wglDeleteContext(old_context);
 
-  wglMakeCurrent(hdc, *context);
+  if (!wglMakeCurrent(hdc, new_context)) {
+    LOG("Failed to make the new OpenGL context current");
+  }
+
+  *context = new_context;
 }
 
 void destroy_context(HGLRC* context) {

@@ -2,7 +2,7 @@
 
 float my_sqrtf(float x) {
   if (x < 0.0f) {
-    return 0.0f / 0.0f;
+    return NAN_F;
   }
 
   if (x == 0.0f || x == 1.0f) {
@@ -103,7 +103,7 @@ float my_tanf(float x) {
   float c = my_cosf(x);
 
   if (c == 0.0f)
-    return 0.0f / 0.0f;
+    return NAN_F;
 
   return my_sinf(x) / c;
 }

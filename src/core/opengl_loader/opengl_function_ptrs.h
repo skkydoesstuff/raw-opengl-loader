@@ -19,7 +19,7 @@ typedef void (APIENTRY*glVertexAttribPointerProc)(GLuint index, GLint size, GLen
 typedef void (APIENTRY*glEnableVertexAttribArrayProc)(GLuint index);
 
 // buffer functions
-typedef void (APIENTRY*glGenBuffersProc)(GLsizei n, GLuint* buffers);
+typedef void (__stdcall*glGenBuffersProc)(GLsizei n, GLuint* buffers);
 typedef void (APIENTRY*glBindBufferProc)(GLenum target, GLuint buffer);
 typedef void (APIENTRY*glBufferDataProc)(GLenum target, GLsizeiptr size, const void* data, GLenum usage);
 typedef void (APIENTRY*glDeleteBuffersProc)(GLsizei n, GLuint* buffers);

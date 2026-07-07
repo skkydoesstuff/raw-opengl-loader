@@ -5,6 +5,8 @@
 #define TWO_PI 6.28318530717958647692f
 #define INV_TWO_PI 0.15915494309189533577f
 
+#define NAN_F 0x7FC00000
+
 float my_sqrtf(float x);
 float my_fabsf(float x);
 float my_fminf(float a, float b);

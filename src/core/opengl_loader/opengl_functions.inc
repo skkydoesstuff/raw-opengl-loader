@@ -1,33 +1,33 @@
-GL_FUNCTION(glViewport);
-GL_FUNCTION(glClearColor);
-GL_FUNCTION(glClear);
-GL_FUNCTION(glEnable);
-GL_FUNCTION(glDisable);
+GL_FUNCTION(glViewport)
+GL_FUNCTION(glClearColor)
+GL_FUNCTION(glClear)
+GL_FUNCTION(glEnable)
+GL_FUNCTION(glDisable)
 
-GL_FUNCTION(glGenVertexArrays);
-GL_FUNCTION(glBindVertexArray);
-GL_FUNCTION(glDeleteVertexArrays);
-GL_FUNCTION(glVertexAttribPointer);
-GL_FUNCTION(glEnableVertexAttribArray);
+GL_FUNCTION(glGenVertexArrays)
+GL_FUNCTION(glBindVertexArray)
+GL_FUNCTION(glDeleteVertexArrays)
+GL_FUNCTION(glVertexAttribPointer)
+GL_FUNCTION(glEnableVertexAttribArray)
 
-GL_FUNCTION(glGenBuffers);
-GL_FUNCTION(glBindBuffer);
-GL_FUNCTION(glBufferData);
-GL_FUNCTION(glDeleteBuffers);
+GL_FUNCTION(glGenBuffers)
+GL_FUNCTION(glBindBuffer)
+GL_FUNCTION(glBufferData)
+GL_FUNCTION(glDeleteBuffers)
 
-GL_FUNCTION(glDrawArrays);
-GL_FUNCTION(glDrawElements);
+GL_FUNCTION(glDrawArrays)
+GL_FUNCTION(glDrawElements)
 
-GL_FUNCTION(glCreateShader);
-GL_FUNCTION(glDeleteShader);
-GL_FUNCTION(glShaderSource);
-GL_FUNCTION(glCompileShader);
-GL_FUNCTION(glCreateProgram);
-GL_FUNCTION(glDeleteProgram);
-GL_FUNCTION(glAttachShader);
-GL_FUNCTION(glDetachShader);
-GL_FUNCTION(glLinkProgram);
-GL_FUNCTION(glUseProgram);
+GL_FUNCTION(glCreateShader)
+GL_FUNCTION(glDeleteShader)
+GL_FUNCTION(glShaderSource)
+GL_FUNCTION(glCompileShader)
+GL_FUNCTION(glCreateProgram)
+GL_FUNCTION(glDeleteProgram)
+GL_FUNCTION(glAttachShader)
+GL_FUNCTION(glDetachShader)
+GL_FUNCTION(glLinkProgram)
+GL_FUNCTION(glUseProgram)
 
-GL_FUNCTION(glGetUniformLocation);
-GL_FUNCTION(glUniformMatrix4fv);
+GL_FUNCTION(glGetUniformLocation)
+GL_FUNCTION(glUniformMatrix4fv)

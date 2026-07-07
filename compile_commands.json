@@ -1,56 +1,56 @@
 [
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\file_utils\\file_utils.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\file_utils\\file_utils.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\file_utils\\file_utils.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\file_utils\\file_utils.c",
   "file": "E:/projects/c/raw_renderer/src/core/file_utils/file_utils.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/file_utils/file_utils.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/file_utils/file_utils.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\custom_math.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\custom_math.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\custom_math.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\custom_math.c",
   "file": "E:/projects/c/raw_renderer/src/core/math/custom_math.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/math/custom_math.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/math/custom_math.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\matricies.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\matricies.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\matricies.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\matricies.c",
   "file": "E:/projects/c/raw_renderer/src/core/math/matricies.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/math/matricies.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/math/matricies.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\vectors.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\vectors.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\vectors.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\vectors.c",
   "file": "E:/projects/c/raw_renderer/src/core/math/vectors.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/math/vectors.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/math/vectors.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\opengl_loader\\opengl_loader.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\opengl_loader\\opengl_loader.c",
   "file": "E:/projects/c/raw_renderer/src/core/opengl_loader/opengl_loader.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/opengl_loader/opengl_loader.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/opengl_loader/opengl_loader.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\window\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\window\\window.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\window\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\window\\window.c",
   "file": "E:/projects/c/raw_renderer/src/core/window/window.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/core/window/window.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/core/window/window.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\main.c.obj -c E:\\projects\\c\\raw_renderer\\src\\main.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\main.c.obj -c E:\\projects\\c\\raw_renderer\\src\\main.c",
   "file": "E:/projects/c/raw_renderer/src/main.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/main.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/main.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\mesh.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\mesh.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\mesh.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\mesh.c",
   "file": "E:/projects/c/raw_renderer/src/renderer/mesh.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/renderer/mesh.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/renderer/mesh.c.obj"
 },
 {
   "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe -IE:/projects/c/raw_renderer/src -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\shader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\shader.c",
+  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\renderer\\shader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\renderer\\shader.c",
   "file": "E:/projects/c/raw_renderer/src/renderer/shader.c",
-  "output": "E:/projects/c/raw_renderer/build/CMakeFiles/raw_renderer.dir/src/renderer/shader.c.obj"
+  "output": "CMakeFiles/raw_renderer.dir/src/renderer/shader.c.obj"
 }
 ]

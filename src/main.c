@@ -59,6 +59,8 @@ int WINAPI WinMain(
 
   gl.glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
+  Vec3 m_rot = (Vec3){0.0f, 0.0f, 0.0f}; 
+
   Mat4 model, view, projection;
 
   model = mat4_identity();
@@ -76,6 +78,13 @@ int WINAPI WinMain(
 
   while (1) {
     window_handle_messages();
+
+    m_rot.x += 0.01f;
+
+    model = mat4_identity();
+    mat4_translate((Vec3){0.0f, 0.0f, 0.0f}, &model);
+    mat4_rotate(m_rot, &model);
+    mat4_scale((Vec3){1.0f, 1.0f, 1.0f}, &model);
 
     gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     gl.glUseProgram(shader.program);

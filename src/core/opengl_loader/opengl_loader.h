@@ -26,7 +26,7 @@ void create_context(HGLRC* context, HDC hdc);
 void destroy_context(HGLRC* context);
 void create_capabilities();
 
-typedef struct {
+typedef struct GLFunctions {
   #define GL_FUNCTION(name) name##Proc name;
   #include "core/opengl_loader/opengl_functions.inc"
   #undef GL_FUNCTION
