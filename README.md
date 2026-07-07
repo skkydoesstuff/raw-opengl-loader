@@ -4,13 +4,11 @@ A raw Windows.h exclusive OpenGL loader written in C. This project provides low-
 
 ## Overview
 
-Raw Renderer is a minimalist OpenGL rendering framework designed for Windows platforms. It directly uses the Windows API (`windows.h`) for window creation, context management, and event handling, paired with custom math utilities for graphics calculations.
+A minimalist OpenGL rendering framework designed for Windows platforms. It directly uses the Windows API (`windows.h`) for window creation, context management, and event handling.
 
 ## Features
 
 - Windows-native OpenGL loader
-- Custom math library (sqrt, abs, min, max, trigonometric functions)
-- Direct Windows API integration
 - Minimal external dependencies
 
 ## Build Requirements
