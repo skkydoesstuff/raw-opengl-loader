@@ -1,9 +1,11 @@
 #include "core/opengl_loader/opengl_loader.h"
 
 #include "core/file_utils/file_utils.h"
-#include "error.h"
+#include "core/utils/string_compare.h"
 
 #include "renderer/shader.h"
+
+#include "error.h"
 
 GLuint compile_shader(const GLchar** src, GLenum type) {
   GLuint shader = gl.glCreateShader(type);
@@ -27,6 +29,10 @@ GLuint link_program(GLuint v, GLuint f) {
 }
 
 void shader_create(Shader* shader, const char* vertex_file_name, const char* fragment_file_name) {
+  shader->program = 0;
+  shader->uniform_count = 0;
+  shader->uniforms = (void*)0;
+
   char *exe_dir = get_executable_path();
   const char *suffix = "/assets/shaders/";
 
@@ -84,4 +90,36 @@ void shader_bind(Shader* shader) {
 
 void shader_destroy(Shader* shader) {
   gl.glDeleteProgram(shader->program);
+}
+
+GLint shader_get_uniform(Shader* shader, const char* name) {
+  for (int i = 0; i < shader->uniform_count; i++) {
+    if (string_compare(shader->uniforms[i].name, name)) {
+      return shader->uniforms[i].uniform;
+    }
+  }
+
+  shader->uniforms = realloc(
+    shader->uniforms,
+    (shader->uniform_count + 1) * sizeof(Uniform)
+  );
+
+  if (shader->uniforms == NULL) {
+    return 0;
+  }
+
+  Uniform uni = {
+    name,
+    gl.glGetUniformLocation(shader->program, name)
+  };
+
+  shader->uniforms[shader->uniform_count] = uni;
+  shader->uniform_count++;
+
+  return uni.uniform;
+}
+
+void shader_uniform_mat4(Shader* shader, const char* name, Mat4 mat) {
+  GLint uni = shader_get_uniform(shader, name);
+  gl.glUniformMatrix4fv(uni, 1, GL_FALSE, mat.m);
 }
