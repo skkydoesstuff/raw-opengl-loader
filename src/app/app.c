@@ -18,7 +18,8 @@ void app_create(App* app) {
 Shader* shader;
 Mesh* mesh;
 
-Vec3 m_rot = (Vec3){0.0f, 0.0f, 0.0f}; 
+Vec3 m_rot = (Vec3){0.0f, 0.0f, 0.0f};
+Vec3 m_pos = (Vec3){0.0f, 0.0f, 0.0f};
 Mat4 model, view, projection;
 
 void setup() {
@@ -50,9 +51,10 @@ void setup() {
 
 void update() {
   m_rot.x += 0.01f;
+  m_pos.x += 0.001f;
 
   model = mat4_identity();
-  mat4_translate((Vec3){0.0f, 0.0f, 0.0f}, &model);
+  mat4_translate(m_pos, &model);
   mat4_rotate(m_rot, &model);
   mat4_scale((Vec3){1.0f, 1.0f, 1.0f}, &model);
 

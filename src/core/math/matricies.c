@@ -22,10 +22,10 @@ Mat4 mat4_mul(Mat4 a, Mat4 b) {
   for (int col = 0; col < 4; col++){
     for (int row = 0; row < 4; row++) {
       res.m[MAT4(col, row)] =
-        a.m[MAT4(0, row)] * b.m[MAT4(0, col)] +
-        a.m[MAT4(1, row)] * b.m[MAT4(1, col)] +
-        a.m[MAT4(2, row)] * b.m[MAT4(2, col)] +
-        a.m[MAT4(3, row)] * b.m[MAT4(3, col)];
+        a.m[MAT4(0, row)] * b.m[MAT4(col, 0)] +
+        a.m[MAT4(1, row)] * b.m[MAT4(col, 1)] +
+        a.m[MAT4(2, row)] * b.m[MAT4(col, 2)] +
+        a.m[MAT4(3, row)] * b.m[MAT4(col, 3)];
     }
   }
 
@@ -105,6 +105,7 @@ void mat4_perspective(float fovy, float aspect, float near, float far, Mat4* des
   dest->m[MAT4(2, 2)] = (near + far) * nf;
   dest->m[MAT4(2, 3)] = -1.0f;
   dest->m[MAT4(3, 2)] = 2.0f * near * far * nf;
+  dest->m[MAT4(3, 3)] = 0.0f;
 }
 
 void mat4_look_at(Vec3 eye, Vec3 center, Vec3 up, Mat4* dest) {
