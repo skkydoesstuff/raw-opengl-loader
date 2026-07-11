@@ -107,3 +107,7 @@ float my_tanf(float x) {
 
   return my_sinf(x) / c;
 }
+
+float my_radians(float deg) {
+  return deg * (PI / 180.0f);
+}

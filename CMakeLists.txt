@@ -11,7 +11,7 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
   src/*.c
 )
 
-add_executable(raw_renderer WIN32 ${SOURCES})
+add_executable(raw_renderer ${SOURCES})
 
 target_include_directories(raw_renderer PRIVATE
   src

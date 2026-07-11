@@ -3,9 +3,9 @@
 #include "core/file_utils/file_utils.h"
 #include "core/utils/string_compare.h"
 
-#include "renderer/shader.h"
+#include "example_app/renderer/shader.h"
 
-#include "error.h"
+#include "logging.h"
 
 GLuint compile_shader(const GLchar** src, GLenum type) {
   GLuint shader = gl.glCreateShader(type);

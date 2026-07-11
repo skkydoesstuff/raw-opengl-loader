@@ -1,4 +1,4 @@
-#include "app/app.h"
+#include "example_app/app/app.h"
 
 int main() {
   App app = {0};

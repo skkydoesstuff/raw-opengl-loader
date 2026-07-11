@@ -16,3 +16,5 @@ float my_copysignf(float x, float y);
 float my_sinf(float rad);
 float my_cosf(float rad);
 float my_tanf(float rad);
+
+float my_radians(float deg);

@@ -1,13 +1,16 @@
-#include "app/app.h"
+#include "example_app/app/app.h"
 
 #include "core/opengl_loader/opengl_loader.h"
 #include "core/window/window.h"
 
-#include "renderer/shader.h"
-#include "renderer/mesh.h"
-
 #include "core/math/vectors.h"
 #include "core/math/matrices.h"
+
+#include "example_app/renderer/shader.h"
+#include "example_app/renderer/mesh.h"
+#include "example_app/scene/camera.h"
+
+#include "logging.h"
 
 void app_create(App* app) {
   window_create(&app->window, TITLE, WIDTH, HEIGHT);
@@ -18,9 +21,11 @@ void app_create(App* app) {
 Shader* shader;
 Mesh* mesh;
 
+Camera* camera;
+
 Vec3 m_rot = (Vec3){0.0f, 0.0f, 0.0f};
 Vec3 m_pos = (Vec3){0.0f, 0.0f, 0.0f};
-Mat4 model, view, projection;
+Mat4 model;
 
 void setup() {
   float vertices[28] = {
@@ -37,29 +42,31 @@ void setup() {
 
   shader = malloc(sizeof(Shader));
   mesh = malloc(sizeof(Mesh));
+  camera = malloc(sizeof(Camera));
 
   shader_create(shader, "base.vert", "base.frag");
   mesh_create(mesh, vertices, 7, sizeof(vertices), indices, 6, sizeof(indices));
+  camera_create(camera, 45.0f, (float)1920/(float)1080, 0.01f, (float)100.0f);
+
+  camera->position = (Vec3){0.0f, 0.0f, 3.0f};
 
   mesh_bind(mesh);
 
+  my_print("%f\n", camera->position.z);
+
   mesh_add_vertex_attribute(mesh, 0, 3, (void*)0);
   mesh_add_vertex_attribute(mesh, 1, 4, (void*)(3*sizeof(float)));
-
-  mat4_perspective(45.0f, (float)1920/(float)1080, 0.01f, 100.0f, &projection);
 }
 
 void update() {
   m_rot.x += 0.01f;
-  m_pos.x += 0.001f;
 
   model = mat4_identity();
   mat4_translate(m_pos, &model);
   mat4_rotate(m_rot, &model);
   mat4_scale((Vec3){1.0f, 1.0f, 1.0f}, &model);
 
-  view = mat4_identity();
-  mat4_look_at((Vec3){0.0f, 0.0f, 3.0f}, (Vec3){0.0f, 0.0f, 0.0f}, (Vec3){0.0f, 1.0f, 0.0f}, &view);
+  camera_update(camera);
 }
 
 void render() {
@@ -67,8 +74,8 @@ void render() {
   shader_bind(shader);
 
   shader_uniform_mat4(shader, "model", model);
-  shader_uniform_mat4(shader, "view", view);
-  shader_uniform_mat4(shader, "projection", projection);
+  shader_uniform_mat4(shader, "view", camera->view);
+  shader_uniform_mat4(shader, "projection", camera->projection);
   mesh_draw(mesh);
 }
 

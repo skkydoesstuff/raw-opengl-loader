@@ -2,7 +2,7 @@
 
 #include <windows.h>
 
-#include "error.h"
+#include "logging.h"
 
 char* get_executable_path() {
   char* exePath = malloc(MAX_PATH);

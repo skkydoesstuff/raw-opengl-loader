@@ -1,8 +1,6 @@
 #include "core/opengl_loader/opengl_loader.h"
 
-#include "renderer/mesh.h"
-
-#include <stdio.h>
+#include "example_app/renderer/mesh.h"
 
 void mesh_create(
   Mesh* mesh,
@@ -38,7 +36,6 @@ void mesh_add_vertex_attribute(
   GLint size,
   const void* ptr
 ) {
-  printf("stride: %d\n", mesh->stride);
 
   mesh_bind(mesh);
   gl.glVertexAttribPointer(index, size, GL_FLOAT, GL_FALSE, mesh->stride, ptr);
