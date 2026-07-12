@@ -39,7 +39,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t shader_dir_len = strlen(exe_dir) + strlen(suffix) + 1;
   char *shader_dir = malloc(shader_dir_len);
   if (shader_dir == NULL) {
-      LOG("Failed to allocate memory for the shader directory!");
+      print("Failed to allocate memory for the shader directory!");
       free(exe_dir);
       return;
   }
@@ -50,7 +50,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t vertex_len = strlen(shader_dir) + strlen(vertex_file_name) + 1;
   char *vertex_path = malloc(vertex_len);
   if (vertex_path == NULL) {
-      LOG("Failed to allocate memory for vertex shader path!");
+      print("Failed to allocate memory for vertex shader path!");
       free(shader_dir);
       free(exe_dir);
       return;
@@ -61,7 +61,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t fragment_len = strlen(shader_dir) + strlen(fragment_file_name) + 1;
   char *fragment_path = malloc(fragment_len);
   if (fragment_path == NULL) {
-      LOG("Failed to allocate memory for fragment shader path!");
+      print("Failed to allocate memory for fragment shader path!");
       free(vertex_path);
       free(shader_dir);
       free(exe_dir);
@@ -72,6 +72,17 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
 
   char* vert_src = read_file(vertex_path);
   char* frag_src = read_file(fragment_path);
+
+  if (!vert_src) {
+    print("vertex shader failed to load\n");
+    return;
+  }
+
+  if (!frag_src) {
+    print("fragment shader failed to load\n");
+    free(vert_src);
+    return;
+  }
 
   GLuint v = compile_shader((const char**)&vert_src, GL_VERTEX_SHADER);
   GLuint f = compile_shader((const char**)&frag_src, GL_FRAGMENT_SHADER);

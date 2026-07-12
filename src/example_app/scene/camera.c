@@ -1,8 +1,10 @@
 #include "example_app/scene/camera.h"
 
 #include "core/math/matrices.h"
-#include "core/math/custom_math.h"
+#include "core/math/radians.h"
 #include "core/math/vectors.h"
+
+#include <math.h>
 
 void camera_create(
   Camera* camera,
@@ -16,7 +18,7 @@ void camera_create(
   camera->pitch = 0.0f;
 
   camera->projection = mat4_identity();
-  mat4_perspective(my_radians(fov), aspect, near_plane, far_plane, &camera->projection);
+  mat4_perspective(TO_RADIANS(fov), aspect, near_plane, far_plane, &camera->projection);
 }
 
 void camera_update(Camera* camera) {
@@ -24,12 +26,12 @@ void camera_update(Camera* camera) {
 
   Vec3 forward = VEC3_ZERO;
 
-  float yaw_rad = my_radians(camera->yaw);
-  float pitch_rad = my_radians(camera->pitch);
+  float yaw_rad = TO_RADIANS(camera->yaw);
+  float pitch_rad = TO_RADIANS(camera->pitch);
 
-  forward.x = my_cosf(yaw_rad) * my_cosf(pitch_rad);
-  forward.y = my_sinf(pitch_rad);
-  forward.z = my_sinf(yaw_rad) * my_cosf(pitch_rad);
+  forward.x = cosf(yaw_rad) * cosf(pitch_rad);
+  forward.y = sinf(pitch_rad);
+  forward.z = sinf(yaw_rad) * cosf(pitch_rad);
 
   forward = vec3_normalize(forward);
 

@@ -27,3 +27,8 @@
 // shader types
 #define GL_FRAGMENT_SHADER 0x8B30
 #define GL_VERTEX_SHADER 0x8B31
+
+// glGetString enums
+#define GL_VERSION 0x1F02
+#define GL_VENDOR 0x1F00
+#define GL_RENDERER 0x1F01

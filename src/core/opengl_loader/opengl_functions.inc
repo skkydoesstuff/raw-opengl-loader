@@ -3,6 +3,7 @@ GL_FUNCTION(glClearColor)
 GL_FUNCTION(glClear)
 GL_FUNCTION(glEnable)
 GL_FUNCTION(glDisable)
+GL_FUNCTION(glGetString)
 
 GL_FUNCTION(glGenVertexArrays)
 GL_FUNCTION(glBindVertexArray)

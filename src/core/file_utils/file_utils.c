@@ -7,12 +7,12 @@
 char* get_executable_path() {
   char* exePath = malloc(MAX_PATH);
   if (!exePath) {
-    LOG("Memory allocation failed");
+    print("Memory allocation failed");
   }
 
   DWORD result = GetModuleFileName(NULL, exePath, MAX_PATH);
   if (result == 0 || result == MAX_PATH) {
-    LOG("Failed to get executable path");
+    print("Failed to get executable path");
     free(exePath);
   }
 

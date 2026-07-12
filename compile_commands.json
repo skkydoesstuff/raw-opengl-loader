@@ -1,74 +1,296 @@
 [
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\file_utils\\file_utils.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\file_utils\\file_utils.c",
-  "file": "E:/projects/c/raw_renderer/src/core/file_utils/file_utils.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/file_utils/file_utils.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\custom_math.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\custom_math.c",
-  "file": "E:/projects/c/raw_renderer/src/core/math/custom_math.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/math/custom_math.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\matricies.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\matricies.c",
-  "file": "E:/projects/c/raw_renderer/src/core/math/matricies.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/math/matricies.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\math\\vectors.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\math\\vectors.c",
-  "file": "E:/projects/c/raw_renderer/src/core/math/vectors.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/math/vectors.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\opengl_loader\\opengl_loader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\opengl_loader\\opengl_loader.c",
-  "file": "E:/projects/c/raw_renderer/src/core/opengl_loader/opengl_loader.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/opengl_loader/opengl_loader.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\utils\\string_compare.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\utils\\string_compare.c",
-  "file": "E:/projects/c/raw_renderer/src/core/utils/string_compare.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/utils/string_compare.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\core\\window\\window.c.obj -c E:\\projects\\c\\raw_renderer\\src\\core\\window\\window.c",
-  "file": "E:/projects/c/raw_renderer/src/core/window/window.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/core/window/window.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\example_app\\app\\app.c.obj -c E:\\projects\\c\\raw_renderer\\src\\example_app\\app\\app.c",
-  "file": "E:/projects/c/raw_renderer/src/example_app/app/app.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/example_app/app/app.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\example_app\\renderer\\mesh.c.obj -c E:\\projects\\c\\raw_renderer\\src\\example_app\\renderer\\mesh.c",
-  "file": "E:/projects/c/raw_renderer/src/example_app/renderer/mesh.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/example_app/renderer/mesh.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\example_app\\renderer\\shader.c.obj -c E:\\projects\\c\\raw_renderer\\src\\example_app\\renderer\\shader.c",
-  "file": "E:/projects/c/raw_renderer/src/example_app/renderer/shader.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/example_app/renderer/shader.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\example_app\\scene\\camera.c.obj -c E:\\projects\\c\\raw_renderer\\src\\example_app\\scene\\camera.c",
-  "file": "E:/projects/c/raw_renderer/src/example_app/scene/camera.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/example_app/scene/camera.c.obj"
-},
-{
-  "directory": "E:/projects/c/raw_renderer/build",
-  "command": "E:\\mingw64\\w64devkit\\bin\\cc.exe  @CMakeFiles/raw_renderer.dir/includes_C.rsp -g -std=gnu2x -o CMakeFiles\\raw_renderer.dir\\src\\main.c.obj -c E:\\projects\\c\\raw_renderer\\src\\main.c",
-  "file": "E:/projects/c/raw_renderer/src/main.c",
-  "output": "CMakeFiles/raw_renderer.dir/src/main.c.obj"
-}
-]
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/main.c",
+   "-o",
+   "build/main.o"
+  ],
+  "file": "src/main.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/file_utils/file_utils.c",
+   "-o",
+   "build/core/file_utils/file_utils.o"
+  ],
+  "file": "src/core/file_utils/file_utils.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/math/matricies.c",
+   "-o",
+   "build/core/math/matricies.o"
+  ],
+  "file": "src/core/math/matricies.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/math/vectors.c",
+   "-o",
+   "build/core/math/vectors.o"
+  ],
+  "file": "src/core/math/vectors.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/opengl_loader/opengl_loader.c",
+   "-o",
+   "build/core/opengl_loader/opengl_loader.o"
+  ],
+  "file": "src/core/opengl_loader/opengl_loader.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/utils/string_compare.c",
+   "-o",
+   "build/core/utils/string_compare.o"
+  ],
+  "file": "src/core/utils/string_compare.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/window/time.c",
+   "-o",
+   "build/core/window/time.o"
+  ],
+  "file": "src/core/window/time.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/core/window/window.c",
+   "-o",
+   "build/core/window/window.o"
+  ],
+  "file": "src/core/window/window.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/app/app.c",
+   "-o",
+   "build/example_app/app/app.o"
+  ],
+  "file": "src/example_app/app/app.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/renderer/mesh.c",
+   "-o",
+   "build/example_app/renderer/mesh.o"
+  ],
+  "file": "src/example_app/renderer/mesh.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/renderer/shader.c",
+   "-o",
+   "build/example_app/renderer/shader.o"
+  ],
+  "file": "src/example_app/renderer/shader.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/scene/camera.c",
+   "-o",
+   "build/example_app/scene/camera.o"
+  ],
+  "file": "src/example_app/scene/camera.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/scene/model.c",
+   "-o",
+   "build/example_app/scene/model.o"
+  ],
+  "file": "src/example_app/scene/model.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/resource_manager.c",
+   "-o",
+   "build/example_app/resource_manager.o"
+  ],
+  "file": "src/example_app/resource_manager.c"
+ }
+]

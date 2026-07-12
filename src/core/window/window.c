@@ -1,5 +1,4 @@
 #include "window.h"
-#include <minwindef.h>
 
 static const char CLASS_NAME[] = "raw_renderer";
 
@@ -7,8 +6,8 @@ static LRESULT CALLBACK wnd_proc(
     HWND hwnd,
     UINT msg,
     WPARAM wParam,
-    LPARAM lParam)
-{
+    LPARAM lParam
+) {
     switch (msg) {
     case WM_DESTROY:
         PostQuitMessage(0);
@@ -22,45 +21,49 @@ int window_create(
     Window *window,
     const char *title,
     int width,
-    int height)
-{
+    int height
+) {
   HINSTANCE instance = GetModuleHandle(NULL);
 
   WNDCLASSEX wc = {
-        .cbSize = sizeof(wc),
-        .lpfnWndProc = wnd_proc,
-        .hInstance = instance,
-        .lpszClassName = CLASS_NAME,
-        .hCursor = LoadCursor(NULL, IDC_ARROW),
-    };
+    .cbSize = sizeof(wc),
+    .lpfnWndProc = wnd_proc,
+    .hInstance = instance,
+    .lpszClassName = CLASS_NAME,
+    .hCursor = LoadCursor(NULL, IDC_ARROW),
+  };
 
-    RegisterClassEx(&wc);
+  RegisterClassEx(&wc);
 
-    window->hwnd = CreateWindowEx(
-        0,
-        CLASS_NAME,
-        title,
-        WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX,
-        CW_USEDEFAULT,
-        CW_USEDEFAULT,
-        width,
-        height,
-        NULL,
-        NULL,
-        instance,
-        NULL);
+  window->hwnd = CreateWindowEx(
+    0,
+    CLASS_NAME,
+    title,
+    WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX,
+    CW_USEDEFAULT,
+    CW_USEDEFAULT,
+    width,
+    height,
+    NULL,
+    NULL,
+    instance,
+    NULL);
 
-    if (!window->hwnd)
-        return 0;
+  if (!window->hwnd)
+    return 0;
 
-    window->hdc = GetDC(window->hwnd);
+  window->hdc = GetDC(window->hwnd);
 
-    ShowWindow(window->hwnd, SW_SHOW);
+  ShowWindow(window->hwnd, SW_SHOW);
 
-    return 1;
+  time_create(&window->time);
+
+  return 1;
 }
 
-void window_handle_messages() {
+void window_handle_messages(Window* window) {
+  time_update(&window->time);
+
   MSG msg;
 
   while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) {
@@ -76,8 +79,7 @@ void window_swap_buffers(Window *window) {
   SwapBuffers(window->hdc);
 }
 
-void window_destroy(Window *window)
-{
-    ReleaseDC(window->hwnd, window->hdc);
-    DestroyWindow(window->hwnd);
+void window_destroy(Window *window) {
+  ReleaseDC(window->hwnd, window->hdc);
+  DestroyWindow(window->hwnd);
 }

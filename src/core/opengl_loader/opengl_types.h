@@ -11,3 +11,4 @@ typedef ptrdiff_t GLsizeiptr;
 typedef float GLfloat;
 typedef unsigned int GLbitfield;
 typedef unsigned char GLboolean;
+typedef unsigned char GLubyte;

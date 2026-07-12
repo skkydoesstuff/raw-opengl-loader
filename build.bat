@@ -1,6 +1,4 @@
 mkdir build
-cmake -B build -G "MinGW Makefiles"
-cmake --build build
-copy build\compile_commands.json compile_commands.json
-robocopy "assets" "build\assets" /e
+compiledb make debug
+robocopy assets build\assets /E
 build\raw_renderer.exe

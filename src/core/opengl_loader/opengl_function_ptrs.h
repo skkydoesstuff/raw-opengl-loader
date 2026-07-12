@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdint.h>
 #include <windows.h>
 
 #include "core/opengl_loader/opengl_types.h"
@@ -10,6 +11,7 @@ typedef void (APIENTRY*glClearColorProc)(GLfloat red, GLfloat green, GLfloat blu
 typedef void (APIENTRY*glClearProc)(GLbitfield mask);
 typedef void (APIENTRY*glEnableProc)(GLenum cap);
 typedef void (APIENTRY*glDisableProc)(GLenum cap);
+typedef const GLubyte* (APIENTRY*glGetStringProc)(GLenum name);
 
 // vertex array functions
 typedef void (APIENTRY*glGenVertexArraysProc)(GLsizei n, GLuint* arrays);

@@ -1,5 +1,6 @@
 #include "core/math/vectors.h"
-#include "core/math/custom_math.h"
+
+#include <math.h>
 
 Vec3 vec3_add(Vec3 a, Vec3 b) {
   return (Vec3){
@@ -46,7 +47,7 @@ Vec3 vec3_cross(Vec3 a, Vec3 b) {
 }
 
 float vec3_length(Vec3 v) {
-  return my_sqrtf(vec3_dot(v, v));
+  return sqrtf(vec3_dot(v, v));
 }
 
 Vec3 vec3_normalize(Vec3 v) {

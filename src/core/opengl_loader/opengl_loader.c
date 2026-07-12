@@ -31,11 +31,11 @@ void context_create(HGLRC* context, HDC hdc) {
 
   HGLRC old_context = wglCreateContext(hdc);
   if (!old_context || !wglMakeCurrent(hdc, old_context)) {
-    LOG("Failed to create temporary opengl context!");
+    print("Failed to create temporary opengl context!");
   }
 
   PFNWGLCREATECONTEXTATTRIBSARBPROC wglCreateContextAttribsARB =
-    (PFNWGLCREATECONTEXTATTRIBSARBPROC)
+    (PFNWGLCREATECONTEXTATTRIBSARBPROC)(void*)
       wglGetProcAddress("wglCreateContextAttribsARB");
 
   HGLRC new_context = 0;
@@ -51,7 +51,7 @@ void context_create(HGLRC* context, HDC hdc) {
 
     new_context = wglCreateContextAttribsARB(hdc, 0, attribs);
   } else {
-    LOG("wglCreateContextAttribsARB not supported, falling back to a legacy context");
+    print("wglCreateContextAttribsARB not supported, falling back to a legacy context");
   }
 
   if (!new_context) {
@@ -59,7 +59,7 @@ void context_create(HGLRC* context, HDC hdc) {
   }
 
   if (!new_context) {
-    LOG("Couldn't create an OpenGL context");
+    print("Couldn't create an OpenGL context");
     return;
   }
 
@@ -67,7 +67,7 @@ void context_create(HGLRC* context, HDC hdc) {
   wglDeleteContext(old_context);
 
   if (!wglMakeCurrent(hdc, new_context)) {
-    LOG("Failed to make the new OpenGL context current");
+    print("Failed to make the new OpenGL context current");
   }
 
   *context = new_context;
@@ -101,7 +101,9 @@ void* get_gl_proc(const char* name) {
 
 void create_capabilities() {
   #define GL_FUNCTION(name) \
-    gl.name = (name##Proc)get_gl_proc(#name);
+    gl.name = (name##Proc)get_gl_proc(#name); \
+    print("%s: ", #name);  \
+    print("%p\n", (void*)gl.name);
 
   #include "core/opengl_loader/opengl_functions.inc"
 
