@@ -15,6 +15,6 @@ typedef struct {
   Mat4 model_matrix;
 } Model;
 
-void model_create(Mesh* mesh, Model* model);
+void model_create(Model* model, Mesh* mesh);
 
 void model_draw(Model* model, Shader* base_shader);

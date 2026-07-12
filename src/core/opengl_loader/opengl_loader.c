@@ -1,5 +1,5 @@
 #include "core/opengl_loader/opengl_loader.h"
-#include "logging.h"
+#include <stdio.h>
 
 GLFunctions gl = {0};
 
@@ -31,7 +31,7 @@ void context_create(HGLRC* context, HDC hdc) {
 
   HGLRC old_context = wglCreateContext(hdc);
   if (!old_context || !wglMakeCurrent(hdc, old_context)) {
-    print("Failed to create temporary opengl context!");
+    printf("Failed to create temporary opengl context!");
   }
 
   PFNWGLCREATECONTEXTATTRIBSARBPROC wglCreateContextAttribsARB =
@@ -51,7 +51,7 @@ void context_create(HGLRC* context, HDC hdc) {
 
     new_context = wglCreateContextAttribsARB(hdc, 0, attribs);
   } else {
-    print("wglCreateContextAttribsARB not supported, falling back to a legacy context");
+    printf("wglCreateContextAttribsARB not supported, falling back to a legacy context");
   }
 
   if (!new_context) {
@@ -59,7 +59,7 @@ void context_create(HGLRC* context, HDC hdc) {
   }
 
   if (!new_context) {
-    print("Couldn't create an OpenGL context");
+    printf("Couldn't create an OpenGL context");
     return;
   }
 
@@ -67,7 +67,7 @@ void context_create(HGLRC* context, HDC hdc) {
   wglDeleteContext(old_context);
 
   if (!wglMakeCurrent(hdc, new_context)) {
-    print("Failed to make the new OpenGL context current");
+    printf("Failed to make the new OpenGL context current");
   }
 
   *context = new_context;
@@ -102,8 +102,8 @@ void* get_gl_proc(const char* name) {
 void create_capabilities() {
   #define GL_FUNCTION(name) \
     gl.name = (name##Proc)get_gl_proc(#name); \
-    print("%s: ", #name);  \
-    print("%p\n", (void*)gl.name);
+    printf("%s: ", #name);  \
+    printf("%p\n", (void*)gl.name);
 
   #include "core/opengl_loader/opengl_functions.inc"
 

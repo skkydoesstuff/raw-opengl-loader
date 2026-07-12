@@ -119,27 +119,6 @@
    "-DDEBUG",
    "-O0",
    "-c",
-   "src/core/utils/string_compare.c",
-   "-o",
-   "build/core/utils/string_compare.o"
-  ],
-  "file": "src/core/utils/string_compare.c"
- },
- {
-  "directory": "E:\\projects\\c\\raw_renderer",
-  "arguments": [
-   "gcc",
-   "-std=c23",
-   "-Wall",
-   "-Wextra",
-   "-Isrc",
-   "-O2",
-   "-g",
-   "-MMD",
-   "-MP",
-   "-DDEBUG",
-   "-O0",
-   "-c",
    "src/core/window/time.c",
    "-o",
    "build/core/window/time.o"
@@ -166,6 +145,27 @@
    "build/core/window/window.o"
   ],
   "file": "src/core/window/window.c"
+ },
+ {
+  "directory": "E:\\projects\\c\\raw_renderer",
+  "arguments": [
+   "gcc",
+   "-std=c23",
+   "-Wall",
+   "-Wextra",
+   "-Isrc",
+   "-O2",
+   "-g",
+   "-MMD",
+   "-MP",
+   "-DDEBUG",
+   "-O0",
+   "-c",
+   "src/example_app/resource_manager.c",
+   "-o",
+   "build/example_app/resource_manager.o"
+  ],
+  "file": "src/example_app/resource_manager.c"
  },
  {
   "directory": "E:\\projects\\c\\raw_renderer",
@@ -271,26 +271,5 @@
    "build/example_app/scene/model.o"
   ],
   "file": "src/example_app/scene/model.c"
- },
- {
-  "directory": "E:\\projects\\c\\raw_renderer",
-  "arguments": [
-   "gcc",
-   "-std=c23",
-   "-Wall",
-   "-Wextra",
-   "-Isrc",
-   "-O2",
-   "-g",
-   "-MMD",
-   "-MP",
-   "-DDEBUG",
-   "-O0",
-   "-c",
-   "src/example_app/resource_manager.c",
-   "-o",
-   "build/example_app/resource_manager.o"
-  ],
-  "file": "src/example_app/resource_manager.c"
  }
 ]

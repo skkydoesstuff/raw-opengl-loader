@@ -1,7 +1,7 @@
 #include "example_app/scene/model.h"
 #include "core/math/matrices.h"
 
-void model_create(Mesh* mesh, Model* model) {
+void model_create(Model* model, Mesh* mesh) {
   model->mesh = mesh;
   model->position = VEC3_ZERO;
   model->rotation = VEC3_ZERO;

@@ -1,11 +1,10 @@
 #include "example_app/resource_manager.h"
 
-#include "core/utils/string_compare.h"
-
 #include "example_app/renderer/shader.h"
 #include "example_app/renderer/mesh.h"
 
 #include <malloc.h>
+#include <string.h>
 
 void rm_create(ResourceManager* rm) {
   rm->items = NULL;
@@ -32,9 +31,9 @@ void rm_add_item(ResourceManager* rm, ResourceType type, const char* tag, void* 
   }
 
   Resource r = {
-    tag,
-    type,
-    data
+    .tag = tag,
+    .type = type,
+    .data = data
   };
 
   rm->items[rm->count++] = r;
@@ -42,7 +41,7 @@ void rm_add_item(ResourceManager* rm, ResourceType type, const char* tag, void* 
 
 Resource* rm_get_item(ResourceManager* rm, const char* tag) {
   for (size_t i = 0; i < rm->count; i++) {
-    if (string_compare(tag, rm->items[i].tag)) {
+    if (strcmp(tag, rm->items[i].tag) == 0) {
       return &rm->items[i];
     }
   }

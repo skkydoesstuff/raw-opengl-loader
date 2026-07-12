@@ -5,21 +5,21 @@
 #include <string.h>
 #include <windows.h>
 
-#include "logging.h"
+#include <stdio.h>
 
 char* get_executable_path()
 {
   char* exe_path = malloc(MAX_PATH);
 
   if (!exe_path) {
-    print("Memory allocation failed");
+    printf("Memory allocation failed");
     return NULL;
   }
 
   DWORD result = GetModuleFileNameA(NULL, exe_path, MAX_PATH);
 
   if (result == 0 || result == MAX_PATH) {
-    print("Failed to get executable path");
+    printf("Failed to get executable path");
     free(exe_path);
     return NULL;
   }

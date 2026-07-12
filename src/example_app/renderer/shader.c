@@ -1,11 +1,12 @@
 #include "core/opengl_loader/opengl_loader.h"
 
 #include "core/file_utils/file_utils.h"
-#include "core/utils/string_compare.h"
 
 #include "example_app/renderer/shader.h"
 
-#include "logging.h"
+#include <stdio.h>
+
+#include <string.h>
 
 GLuint compile_shader(const GLchar** src, GLenum type) {
   GLuint shader = gl.glCreateShader(type);
@@ -39,7 +40,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t shader_dir_len = strlen(exe_dir) + strlen(suffix) + 1;
   char *shader_dir = malloc(shader_dir_len);
   if (shader_dir == NULL) {
-      print("Failed to allocate memory for the shader directory!");
+      printf("Failed to allocate memory for the shader directory!");
       free(exe_dir);
       return;
   }
@@ -50,7 +51,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t vertex_len = strlen(shader_dir) + strlen(vertex_file_name) + 1;
   char *vertex_path = malloc(vertex_len);
   if (vertex_path == NULL) {
-      print("Failed to allocate memory for vertex shader path!");
+      printf("Failed to allocate memory for vertex shader path!");
       free(shader_dir);
       free(exe_dir);
       return;
@@ -61,7 +62,7 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   size_t fragment_len = strlen(shader_dir) + strlen(fragment_file_name) + 1;
   char *fragment_path = malloc(fragment_len);
   if (fragment_path == NULL) {
-      print("Failed to allocate memory for fragment shader path!");
+      printf("Failed to allocate memory for fragment shader path!");
       free(vertex_path);
       free(shader_dir);
       free(exe_dir);
@@ -74,12 +75,12 @@ void shader_create(Shader* shader, const char* vertex_file_name, const char* fra
   char* frag_src = read_file(fragment_path);
 
   if (!vert_src) {
-    print("vertex shader failed to load\n");
+    printf("vertex shader failed to load\n");
     return;
   }
 
   if (!frag_src) {
-    print("fragment shader failed to load\n");
+    printf("fragment shader failed to load\n");
     free(vert_src);
     return;
   }
@@ -105,7 +106,7 @@ void shader_destroy(Shader* shader) {
 
 GLint shader_get_uniform(Shader* shader, const char* name) {
   for (int i = 0; i < shader->uniform_count; i++) {
-    if (string_compare(shader->uniforms[i].name, name)) {
+    if (strcmp(shader->uniforms[i].name, name) == 0) {
       return shader->uniforms[i].uniform;
     }
   }
